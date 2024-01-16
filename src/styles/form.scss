@@ -1,3 +1,45 @@
 .edit {
-    background-color: aliceblue;
+    border: 2px solid aliceblue;
+}
+
+.noEdit {
+    background-color: none;
+}
+
+fieldset > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    & > * {
+        margin: 10px;
+        padding: 5px 10px;
+    }
+}
+
+section {
+    padding: 5px;
+}
+
+input {
+    flex: 1 auto;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+select {
+    all: none;
+}
+
+select, 
+input {
+    margin: 0 15px;
+    padding: 5px;
 }

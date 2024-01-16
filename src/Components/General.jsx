@@ -5,10 +5,14 @@ export default function General() {
         <section>
             <fieldset>
                 <legend>General</legend>
-                <InputLine label="First Name" _id="first_name"/>
-                <InputLine label="Last Name" _id="last_name" />
-                <InputLine label="Email" type="email" _id="email" />
-                <InputLine label="Number" type="tel" _id="number" />
+                <div>
+                    <InputLine label="First Name" _id="first_name"/>
+                    <InputLine label="Last Name" _id="last_name" />
+                </div>
+                <div>
+                    <InputLine label="Email" type="email" _id="email" />
+                    <InputLine label="Number" type="tel" _id="number" />
+                </div>
             </fieldset>
         </section>
     )
