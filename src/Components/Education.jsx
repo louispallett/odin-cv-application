@@ -1,68 +1,70 @@
 import { useState } from "react";
 
-class qualification {
-    constructor(name, grade, level) {
-        this.name = name,
-        this.grade = grade,
-        this.level = level
-    }
+class classQualification {
+  constructor(name, grade, level) {
+    this.name = name;
+    this.grade = grade;
+    this.level = level;
+  }
 }
-
-const userQualificationsList = [];
 
 export default function Education() {
+  const [qualifications, setQualifications] = useState([]);
 
-    return (
-        <section>
-            <fieldset>
-                <legend>Education</legend>
-                <Qualification />
-            </fieldset>
-        </section>
-    )
+  const addQualification = () => {
+    let nameValue = document.querySelector(".qualificationName").value;
+    let gradeValue = document.querySelector(".qualificationGrade").value;
+    let qualificationLevel = document.getElementById("qualificationLevel").value;
+    const newQualification = new classQualification(nameValue, gradeValue, qualificationLevel);
+
+    setQualifications([...qualifications, newQualification]);
+};
+
+  return (
+    <section>
+      <fieldset>
+        <legend>Education</legend>
+        {qualifications.map((qualification, index) => (
+          <Qualification key={index} qualification={qualification} />
+        ))}
+        <div>
+          <input placeholder="Qualification Name" className="qualificationName" />
+          <input placeholder="Grade" className="qualificationGrade" />
+          <select name="Qualification" id="qualificationLevel">
+            <option value="Doctorate">Doctorate</option>
+            <option value="Masters">Masters</option>
+            <option value="Bachelors">Bachelors</option>
+            <option value="A Level">A Level</option>
+            <option value="GCSE/BTEC">GCSE/BTEC</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <button onClick={addQualification}>Add</button>
+      </fieldset>
+    </section>
+  );
 }
 
-function Qualification() {
+function Qualification({ qualification }) {
+  const [editing, setEditing] = useState(false);
 
-    const [editing, setEditing] = useState(true);
+  const input = document.querySelector("input");
 
-    const addQualification = () => {
-        const nameValue = document.querySelector(".qualificationName").value;
-        const gradeValue = document.querySelector(".qualificationGrade").value;
-        const qualificationLevel = document.getElementById("qualificationLevel").value;
-        const userQualification = new qualification(nameValue, gradeValue, qualificationLevel)
+  const editQualification = () => {
+    setEditing(!editing);
+  };
 
-        setEditing(false);
-    }
-
-    return (
-        <>
-            <div>
-                <input
-                placeholder="Qualification Name"
-                className="qualificationName"
-                />
-                <input
-                placeholder="Grade"
-                className="qualificationGrade"
-                />
-                <select name="Qualification" id="qualificationLevel">
-                    <option value="Doctorate">Doctorate</option>
-                    <option value="Masters">Masters</option>
-                    <option value="Bachelors">Bachelors</option>
-                    <option value="aLevel">A Level</option>
-                    <option value="GCSE/BTEC">GCSE/BTEC</option>
-                    <option value="other">Other</option>
-                </select>
-                {!editing && (
-                    <button>Edit</button>
-                )}
-            </div>
-            {editing && (
-                <button onClick={addQualification}>Add</button>
-            )}
-        </>
-    )
-
+//   Important to use defaultValue to edit ('value' will render it read-only)
+  return (
+    <div>
+      <input defaultValue={qualification.name} disabled={editing ? false : true} />
+      <input defaultValue={qualification.grade} disabled={editing ? false : true} />
+      <input defaultValue={qualification.level} disabled={editing ? false : true} />
+      {!editing ? (
+        <button onClick={editQualification}>Edit</button>
+      ) : (
+        <button onClick={editQualification}>Done</button>
+      )}
+    </div>
+  );
 }
-
