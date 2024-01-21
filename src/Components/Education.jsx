@@ -68,6 +68,17 @@ function Qualification({ qualification }) {
         <div>
             <input defaultValue={qualification.name} disabled={editing ? false : true} />
             <input defaultValue={qualification.grade} disabled={editing ? false : true} />
+            {/* <div>
+                <select name="Qualification" id="qualificationLevel" defaultValue={qualification.level}
+                disabled={editing ? false : true}>
+                    <option value="Doctorate">Doctorate</option>
+                    <option value="Masters">Masters</option>
+                    <option value="Bachelors">Bachelors</option>
+                    <option value="A Level">A Level</option>
+                    <option value="GCSE/BTEC">GCSE/BTEC</option>
+                    <option value="other">Other</option>
+                </select>
+            </div> */}
             <input defaultValue={qualification.level} disabled={editing ? false : true} />
             {!editing ? (
                 <button onClick={editQualification}>Edit</button>
