@@ -32,7 +32,3 @@ function InputLine({label, type, _id}) {
         </div>
     );
 }
-
-InputLine.defaultProps = {
-    type: "text"
-};
