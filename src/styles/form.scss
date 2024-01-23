@@ -1,3 +1,5 @@
+@use "colours" as colours;
+
 main {
     background-color: white;
     margin: 50px 0;
@@ -12,22 +14,10 @@ label {
     font-weight: bold;
     font-size: 1.1rem;
 }
-  
-select {
-    all: none;
-}
 
 textarea {
     resize: vertical;
 }
-  
-// .edit {
-//     border: 2px solid aliceblue;
-// }
-
-// .noEdit {
-//     background-color: none;
-// }
 
 .currentJobWrapper {
     display: flex;
@@ -37,7 +27,32 @@ textarea {
 .general,
 .education,
 .practical {
-    display: flex;
-    flex-direction: column;
     padding: 10px;
+    & > div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.general > div > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    & > * {
+        justify-self: flex-end;
+    }
+    & > * > * {
+        margin: 5px;
+    }
+}
+
+.qualification-wrapper,
+.practical-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    & > * {
+        flex: 1 auto;
+    }
 }

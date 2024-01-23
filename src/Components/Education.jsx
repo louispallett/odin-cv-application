@@ -65,7 +65,7 @@ function Qualification({ qualification }) {
 
 //   Important to use defaultValue to edit ('value' will render it read-only)
     return (
-        <div className="qualification wrapper">
+        <div className="qualification-wrapper">
             <input defaultValue={qualification.name} disabled={editing ? false : true} />
             <input defaultValue={qualification.grade} disabled={editing ? false : true} />
             <input defaultValue={qualification.level} disabled={editing ? false : true} />
