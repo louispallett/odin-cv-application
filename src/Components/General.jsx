@@ -2,9 +2,9 @@ import { useState } from "react";
 
 export default function General() {    
     return (
-        <section>
-            <fieldset>
-                <legend>General</legend>
+        <section className="general">
+            <h3>General Information</h3>
+            <div>
                 <div>
                     <InputLine label="First Name" _id="first_name"/>
                     <InputLine label="Last Name" _id="last_name" />
@@ -13,7 +13,7 @@ export default function General() {
                     <InputLine label="Email" type="email" _id="email" />
                     <InputLine label="Number" type="tel" _id="number" />
                 </div>
-            </fieldset>
+            </div>
         </section>
     )
 }
@@ -22,7 +22,7 @@ function InputLine({label, type, _id}) {
     const [editStatus, setEditStatus] = useState(true);
 
     return (
-        <div>
+        <div className="general-info-wrapper">
             <label htmlFor={_id}>{label}</label>
             <input 
                 type={type} 

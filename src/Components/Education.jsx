@@ -26,13 +26,13 @@ export default function Education() {
     };
 
     return (
-        <section>
-            <fieldset>
-                <legend>Education</legend>
+        <section className="education">
+            <h3>Education and Qualifications</h3>
+            <div>
                 {qualifications.map((qualification, index) => (
                     <Qualification key={index} qualification={qualification} />
                 ))}
-                <div>
+                <div className="qualification-wrapper">
                     <input placeholder="Qualification Name" className="qualificationName" />
                     <input placeholder="Grade" className="qualificationGrade" />
                     <select name="Qualification" id="qualificationLevel">
@@ -45,7 +45,7 @@ export default function Education() {
                     </select>
                 </div>
                 <button onClick={addQualification}>Add</button>
-            </fieldset>
+            </div>
         </section>
     );
 }
@@ -65,20 +65,9 @@ function Qualification({ qualification }) {
 
 //   Important to use defaultValue to edit ('value' will render it read-only)
     return (
-        <div>
+        <div className="qualification wrapper">
             <input defaultValue={qualification.name} disabled={editing ? false : true} />
             <input defaultValue={qualification.grade} disabled={editing ? false : true} />
-            {/* <div>
-                <select name="Qualification" id="qualificationLevel" defaultValue={qualification.level}
-                disabled={editing ? false : true}>
-                    <option value="Doctorate">Doctorate</option>
-                    <option value="Masters">Masters</option>
-                    <option value="Bachelors">Bachelors</option>
-                    <option value="A Level">A Level</option>
-                    <option value="GCSE/BTEC">GCSE/BTEC</option>
-                    <option value="other">Other</option>
-                </select>
-            </div> */}
             <input defaultValue={qualification.level} disabled={editing ? false : true} />
             {!editing ? (
                 <button onClick={editQualification}>Edit</button>

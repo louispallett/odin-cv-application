@@ -39,13 +39,13 @@ export default function Practical() {
     }
     
     return (
-        <section>
-            <fieldset>
-                <legend>Practical Experience</legend>
+        <section className="practical">
+            <h3>Career History and Practical Experience</h3>
+            <div>
                 {experiences.map((experience, index) => (
                     <Experience key={index} experience={experience} />
                 ))}
-                <div>
+                <div className="practical-wrapper">
                     <input placeholder="Job Title" className="jobTitle" />
                     <input className="start" type="date"/>
                     <input className="end" type="date"/>
@@ -54,13 +54,13 @@ export default function Practical() {
                         <p>Current job</p>
                     </div>
                 </div>
-                <textarea 
-                name="description" 
-                id="description" 
-                cols="10" rows="7" 
+                <textarea
+                name="description"
+                id="description"
+                cols="10" rows="7"
                 placeholder="Please provide a short description of the role, the skills required/developed whilst working there, and any other relevant information."></textarea>
                 <button onClick={addExperience}>Add</button>
-            </fieldset>
+            </div>
         </section>
     )
 }
@@ -76,6 +76,11 @@ function Experience({ experience }) {
 //         redefine this state.
     const deleteExperience = () => {
         alert("Feature not yet added");
+    };
+
+    const currentlyWorking = () => {
+        const end = document.querySelector(".end");
+        end.disabled = !end.disabled;
     }
 
     return (
@@ -87,6 +92,7 @@ function Experience({ experience }) {
                 <input type="checkbox" className="currentJob" 
                     defaultChecked={experience.end == "current" ? true : false}
                     disabled={editing ? false : true}
+                    onclick={currentlyWorking}
                 />
             </div>
             <textarea 
