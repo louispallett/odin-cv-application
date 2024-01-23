@@ -38,8 +38,11 @@ select {
     all: none;
 }
 
-select, 
-input {
-    margin: 0 15px;
-    padding: 5px;
+.currentJobWrapper {
+    display: flex;
+    gap: 5px;
+}
+
+textarea {
+    resize: vertical;
 }

@@ -49,8 +49,10 @@ export default function Practical() {
                     <input placeholder="Job Title" className="jobTitle" />
                     <input className="start" type="date"/>
                     <input className="end" type="date"/>
-                    <input type="checkbox" className="currentJob" onClick={currentlyWorking} />
-                    <p>Current job</p>
+                    <div className="currentJobWrapper">
+                        <input type="checkbox" className="currentJob" onClick={currentlyWorking} />
+                        <p>Current job</p>
+                    </div>
                 </div>
                 <textarea 
                 name="description" 
