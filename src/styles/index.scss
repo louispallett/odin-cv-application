@@ -9,23 +9,10 @@
 :root {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-  color: #213547;
-  background-color: colours.$root_background;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #747bff;
 }
 
 body {
@@ -36,6 +23,31 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(-80deg, #8830fc, #1a30f5, #2371e6, #0998eb);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #747bff;
 }
 
 button {
@@ -67,6 +79,8 @@ section {
 input,
 textarea {
   border: 2px solid colours.$root_background;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 input:focus {
@@ -75,4 +89,5 @@ input:focus {
 
 #root {
   max-width: 900px;
+  padding: 10px;
 }
