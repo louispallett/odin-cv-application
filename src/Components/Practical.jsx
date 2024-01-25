@@ -1,5 +1,10 @@
 import { useState } from "react";
 
+/*
+TODO
+    In Experience(), needs to return dropdown <select> rather than input (otherwise editing becomes more difficult)
+*/
+
 class classExperience {
     constructor(title, start, end, description) {
         this.title = title;
