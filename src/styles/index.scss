@@ -17,15 +17,21 @@
 
 body {
   margin: 0;
+  padding: 0;
+}
+
+.page-container {
   display: flex;
   align-items: center;
   min-width: 320px;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   background: linear-gradient(-80deg, #8830fc, #1a30f5, #2371e6, #0998eb);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 2.5rem;
 }
 
 @keyframes gradient {
@@ -90,4 +96,14 @@ input:focus {
 #root {
   max-width: 900px;
   padding: 10px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 10px;
+  width: 100%;
+  height: 2.5rem;
+  text-align: center;
+  background-color: #ffffff95;
 }
