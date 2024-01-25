@@ -23,8 +23,6 @@ body {
 .page-container {
   display: flex;
   align-items: center;
-  min-width: 320px;
-  display: flex;
   flex-direction: column;
   background: linear-gradient(-80deg, #8830fc, #1a30f5, #2371e6, #0998eb);
   background-size: 400% 400%;
@@ -70,7 +68,8 @@ button:hover {
   cursor: pointer;
   outline: 2px solid colours.$button_hover;
   background-color: colours.$button_hover;
-  transition: background-color 250ms linear;
+  transition: background-color 500ms linear;
+  transition: outline 250ms linear;
 }
 
 button:focus,
@@ -101,9 +100,13 @@ input:focus {
 .footer {
   position: absolute;
   bottom: 0;
+  display: flex;
+  flex: 1 auto;
   padding-bottom: 10px;
-  width: 100%;
-  height: 2.5rem;
   text-align: center;
+  // width: 100%;
   background-color: #ffffff95;
+  & > p {
+    font-size: .85rem;
+  }
 }
