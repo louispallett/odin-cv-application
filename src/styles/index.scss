@@ -58,23 +58,23 @@ button {
   color: white;
   border-radius: 8px;
   border: none;
+  outline: none;
   padding: 0.6em 1.2em;
   font-weight: bold;
   background-color: colours.$theme_base;
-  transition: border-color 0.25s;
+  transform: scale(1);
+  transition: transform 100ms ease-out;
 }
 
-button:hover {
-  cursor: pointer;
-  outline: 2px solid colours.$button_hover;
-  background-color: colours.$button_hover;
-  transition: background-color 500ms linear;
-  transition: outline 250ms linear;
-}
-
+button:hover,
 button:focus,
 button:focus-visible {
-  outline: 2px solid colours.$button_hover;
+  cursor: pointer;
+  background: linear-gradient(-80deg, #8830fc, #1a30f5, #2371e6, #0998eb);
+  background-size: 400% 400%;
+  animation: gradient 3s ease infinite;
+  transform: scale(1.05);
+  transition: transform 250ms linear;
 }
 
 section {
