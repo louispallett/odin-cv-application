@@ -29,6 +29,7 @@ textarea {
 
 .currentJobWrapper {
     display: flex;
+    align-items: center;
     gap: 5px;
 }
 
@@ -63,4 +64,19 @@ textarea {
     & > * {
         flex: 1 auto;
     }
+}
+
+.experience-header {
+    display: flex;
+    gap: 20px;
+}
+
+#editing {
+    background-color: colours.$input_disabled;
+    
+}
+
+#editing-currentJob {
+    color: colours.$input_border;
+    font-size: .9rem;
 }
