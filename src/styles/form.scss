@@ -80,3 +80,12 @@ textarea {
     color: colours.$input_border;
     font-size: .9rem;
 }
+
+@media only screen and (max-width: 800px) {
+    .general > div > div,
+    .education > div > div,
+    .practical > div > div {
+        display: flex;
+        flex-direction: column;
+    }
+}
