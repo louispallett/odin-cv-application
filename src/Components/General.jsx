@@ -1,4 +1,5 @@
 import { useState } from "react";
+import countryCodes from "country-codes-list";
 
 export default function General() {    
     return (
@@ -24,6 +25,8 @@ function InputLine({label, type, _id}) {
     return (
         <div className="general-info-wrapper">
             <label htmlFor={_id}>{label}</label>
+            {_id == "number" && 
+                <CodeSelect />}
             <input 
                 type={type} 
                 id={_id}
@@ -31,4 +34,17 @@ function InputLine({label, type, _id}) {
             />
         </div>
     );
+}
+
+function CodeSelect() {
+    const countryCodesArray = Object.entries(countryCodes.customList("countryCode", "+{countryCallingCode}"));
+    return (
+        <select name="countryCode" id="countryCode" defaultValue="GB">
+            {countryCodesArray.map(([code, label]) => (
+                <option key={code} value={code}>
+                    {label}
+                </option>
+            ))}
+        </select>
+    )
 }
