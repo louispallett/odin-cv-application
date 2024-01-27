@@ -5,6 +5,7 @@ import './styles/index.scss';
 import General from './Components/General.jsx';
 import Education from './Components/Education.jsx';
 import Practical from './Components/Practical.jsx';
+import Submit from './Components/Submit.jsx';
 
 /*
 ====================================
@@ -27,5 +28,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <General />
     <Education />
     <Practical />
+    <Submit />
   </React.StrictMode>,
 )
