@@ -35,7 +35,8 @@ textarea {
 
 .general,
 .education,
-.practical {
+.practical,
+.submit-wrapper {
     padding: 10px;
     & > div {
         display: flex;
@@ -79,6 +80,20 @@ textarea {
 #editing-currentJob {
     color: colours.$input_border;
     font-size: .9rem;
+}
+
+.submit-wrapper {
+    display: flex;
+}
+
+.submit-btn {
+    flex: 1 auto;     
+    background-color: colours.$submit_green;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+    background-color: colours.$submit_hover;
 }
 
 @media only screen and (max-width: 800px) {

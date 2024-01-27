@@ -72,7 +72,7 @@ export default function Practical() {
                 id="description"
                 cols="10" rows="7"
                 placeholder="Please provide a short description of the role, the skills required/developed whilst working there, and any other relevant information."></textarea>
-                <button onClick={addExperience}>Add</button>
+                <button className="btn" onClick={addExperience}>Add</button>
             </div>
         </section>
     )
@@ -115,11 +115,11 @@ function Experience({ experience }) {
                 {...inputProps} >
             </textarea>
             {!editing ? (
-                <button onClick={editExperience}>Edit</button>
+                <button className="btn" onClick={editExperience}>Edit</button>
             ) : (
                 <>
-                    <button onClick={editExperience}>Done</button>
-                    <button onClick={deleteExperience}>Remove</button>
+                    <button className="btn" onClick={editExperience}>Done</button>
+                    <button className="btn" onClick={deleteExperience}>Remove</button>
                 </>
             )}
         </>

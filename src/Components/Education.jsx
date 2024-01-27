@@ -44,7 +44,7 @@ export default function Education() {
                         <option value="other">Other</option>
                     </select>
                 </div>
-                <button onClick={addQualification}>Add</button>
+                <button className="btn" onClick={addQualification}>Add</button>
             </div>
         </section>
     );
@@ -70,11 +70,11 @@ function Qualification({ qualification }) {
             <input defaultValue={qualification.grade} disabled={editing ? false : true} />
             <input defaultValue={qualification.level} disabled={editing ? false : true} />
             {!editing ? (
-                <button onClick={editQualification}>Edit</button>
+                <button className="btn" onClick={editQualification}>Edit</button>
             ) : (
                 <>
-                    <button onClick={editQualification}>Done</button>
-                    <button onClick={deleteQualification}>Remove</button>
+                    <button className="btn" onClick={editQualification}>Done</button>
+                    <button className="btn" onClick={deleteQualification}>Remove</button>
                 </>
             )}
         </div>
