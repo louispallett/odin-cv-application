@@ -4,7 +4,8 @@
 
 The first project in The Odin Project's [React course](https://www.theodinproject.com/lessons/node-path-react-new-cv-application). Testing the use of state and props to develop a simple web form where users can add information/qualifications/practical experience. Not intended for real world use!
 
-|Acknowledgements:|
+|Acknowledgements:| | |
+| ----------- | ----------- | ----------- |
 | Type | File Name | Source |
 | ----------- | ----------- | ----------- |
 | Font | overclock.woff/woff2 | 'Overclock SC', (c) Dario Manuel Muhafara. https://fonts.google.com/specimen/Overlock+SC?preview.text=C.V.%20Application |
