@@ -6,6 +6,7 @@ import General from './Components/General.jsx';
 import Education from './Components/Education.jsx';
 import Practical from './Components/Practical.jsx';
 import Submit from './Components/Submit.jsx';
+import Submitted from './Components/Submitted.jsx';
 
 /*
 ====================================
