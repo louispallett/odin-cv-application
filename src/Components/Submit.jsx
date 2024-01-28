@@ -17,7 +17,8 @@ export default function Submit() {
         setSubmitting("submitting");
         const result = await submittingForm();
         // More logic can be applied here later (for failures)
-        result ? setSubmitting("submitted") : console.log("Failed");
+        // As this is the default in switch, we don't need to add a state here, just clear it!
+        result ? setSubmitting() : console.log("Failed");
     }
 
     const submittingForm = () => {
