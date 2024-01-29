@@ -1,14 +1,16 @@
 // Buttons
+$btn_base: #3f7ada;
 $button_hover: #176cf4;
-$submit_green: rgb(8, 190, 8);
-$submit_hover: rgb(2, 129, 2);
+$submit_green: rgb(4, 146, 4);
+$submit_hover: rgb(4, 167, 4);
 
 //Backgrounds
-$root_background: rgb(212, 212, 212);
-$root_background_transition: rgb(233, 252, 251);
-$theme_base: rgb(53, 123, 236);
+$theme_base: rgb(17, 24, 39);
 $theme_base_transition: rgb(43, 64, 148);
 
 // Inputs
-$input_border: rgb(80, 80, 80);
-$input_disabled: rgb(207, 207, 207);
+$input_border: rgb(255, 255, 255);
+$input_disabled: rgb(41, 61, 105);
+
+// Fonts
+$text_headers: #ffb703;
