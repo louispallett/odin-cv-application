@@ -43,8 +43,8 @@ export default function Submit({
                     <p>You should have recieved a confirmation email, detailing the role you have applied for (in an attached PDF).</p>
                     <p>We will be in touch in a few weeks!</p>
                     <div>
-                        <img src={logo} alt="" />
-                        <p>Mikoshi Corporation Ltd</p>
+                        <img src={logo} alt="" id="logo" />
+                        <h4>Mikoshi Corporation Ltd</h4>
                     </div>
                 </div>
             )
