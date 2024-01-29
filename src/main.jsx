@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { useState } from 'react';
 import './styles/index.scss';
 
 import General from './Components/General.jsx';
@@ -7,27 +8,55 @@ import Education from './Components/Education.jsx';
 import Practical from './Components/Practical.jsx';
 import Submit from './Components/Submit.jsx';
 
-/*
-====================================
-Deploying Vite/React on Netlify 
-====================================
+function App() {
+    const [submitting, setSubmitting] = useState("notSubmitted");
 
-You can deploy Vite/React projects on Netlify very easily by following the UI instructions
-(just linking it to the GitHub repo). 
+    const checkSubmitForm = () => {
+        setSubmitting("checkSubmission");
+    }
 
-BUT, it won't deploy the main.jsx file (and in turn the CSS/SCSS files). To fix this, make sure that the:
+    const cancelSubmission = () => {
+        setSubmitting("notSubmitted");
+    }
 
-  1.  Build command is set to "npm run build"
-  2.  Publish directory is set to "dist".
+    const submitForm = async () => {
+        setSubmitting("submitting");
+        const result = await submittingForm();
+        // More logic can be applied here later (for failures)
+        // As this is the default in switch, we don't need to add a state here, just clear it!
+        result ? setSubmitting("submitted") : console.log("Failed");
+    }
 
-You can do this on set up or go into the "deploy" settings.
-*/
+    const submittingForm = () => {
+        // Simulate loading
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(true);
+            }, 2000);
+        });
+    }
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <General />
-    <Education />
-    <Practical />
-    <Submit />
-  </React.StrictMode>,
-)
+    return (
+        <>
+            {submitting === "submitted" ? (
+                <React.StrictMode>
+                    <Submit />
+                </React.StrictMode>
+            ) : (
+                <React.StrictMode>
+                    <General />
+                    <Education />
+                    <Practical />
+                    <Submit 
+                        submitting={submitting}
+                        checkSubmitForm={checkSubmitForm}
+                        cancelSubmission={cancelSubmission}
+                        submitForm={submitForm}
+                    />
+                </React.StrictMode>
+            )}
+        </>
+    )
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);

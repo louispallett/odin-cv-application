@@ -1,35 +1,12 @@
-import { useState } from "react";
 import logo from "/atom-favicon.svg";
 import loading from "/loading.svg";
 
-export default function Submit() {
-    const [submitting, setSubmitting] = useState("notSubmitted");
-
-    const checkSubmitForm = () => {
-        setSubmitting("checkSubmission");
-    }
-
-    const cancelSubmission = () => {
-        setSubmitting("notSubmitted");
-    }
-
-    const submitForm = async () => {
-        setSubmitting("submitting");
-        const result = await submittingForm();
-        // More logic can be applied here later (for failures)
-        // As this is the default in switch, we don't need to add a state here, just clear it!
-        result ? setSubmitting() : console.log("Failed");
-    }
-
-    const submittingForm = () => {
-        // Simulate loading
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(true);
-            }, 2000);
-        })
-        
-    }
+export default function Submit({
+        submitting,
+        checkSubmitForm,
+        cancelSubmission,
+        submitForm
+    }) {
 
     let itemContent;
 
