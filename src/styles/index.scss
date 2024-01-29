@@ -31,18 +31,6 @@ body {
   padding-bottom: 2.5rem;
 }
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
 a {
   font-weight: 500;
   color: #646cff;
@@ -116,11 +104,8 @@ select {
   position: absolute;
   bottom: 0;
   display: flex;
-  flex: 1 auto;
   padding-bottom: 10px;
   text-align: center;
-  // width: 100%;
-  background-color: #ffffff95;
   & > p {
     font-size: .85rem;
   }
